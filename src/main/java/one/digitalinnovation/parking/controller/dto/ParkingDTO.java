@@ -1,17 +1,48 @@
 package one.digitalinnovation.parking.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParkingDTO {
-
-    private String model;
+    private String id;
+    private String license;
+    private String state;
     private String color;
+    private String model;
+
+    @JsonFormat(pattern = "dd/MM/YY HH:mm")
     private LocalDateTime entryDate;
+    @JsonFormat(pattern = "dd/MM/YY HH:mm")
     private LocalDateTime exitDate;
     private Double bill;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLicense() {
+        return license;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
 
     public String getModel() {
         return model;
