@@ -39,7 +39,7 @@ public class ParkingService {
 
     public Parking create(Parking parkingCreate) {
         String uuid = getUUID();
-        parkingCreate.setId(getUUID());
+        parkingCreate.setId(uuid);
         parkingCreate.setEntryDate(LocalDateTime.now());
         parkingMap.put(uuid, parkingCreate);
         return parkingCreate;

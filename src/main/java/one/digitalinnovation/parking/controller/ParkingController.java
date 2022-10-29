@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/parking")
+@Api(tags = "ParkingController")
 public class ParkingController {
 
     private final ParkingService parkingService;
@@ -22,6 +23,15 @@ public class ParkingController {
         this.parkingService = parkingService;
         this.parkingMapper = parkingMapper;
     }
+
+    @GetMapping
+    @ApiOperation("Find all parkings")
+    public ResponseEntity<List<ParkingDTO>> findAll(){
+        List<Parking> parkingList = parkingService.findAll();
+        List<ParkingDTO> result = parkingMapper.toParkingDTOList(parkingList);
+        return ResponseEntity.ok(result);
+    };
+
 
     @GetMapping("/{id}")
     public ResponseEntity<ParkingDTO> findById(@PathVariable String id){

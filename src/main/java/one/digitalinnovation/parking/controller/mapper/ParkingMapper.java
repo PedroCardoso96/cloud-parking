@@ -29,9 +29,9 @@ public class ParkingMapper {
         return MODEL_MAPPER.map(dto, Parking.class);
     }
 
-    private static class ModelMapper {
-        public ParkingDTO map(Parking parking, Class<ParkingDTO> parkingDTOClass) {
-            return null;
-        }
-    }
+//    private static class ModelMapper {
+//        public ParkingDTO map(Parking parking, Class<ParkingDTO> parkingDTOClass) {
+//            return null;
+//        }
+//    }
 }
