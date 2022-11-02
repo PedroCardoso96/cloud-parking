@@ -3,6 +3,7 @@ package one.digitalinnovation.parking.controller.dto;
 public class ParkingCreateDTO {
     private String id;
     private String license;
+    private String model;
     private String state;
     private String color;
 
@@ -36,5 +37,13 @@ public class ParkingCreateDTO {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }
